@@ -6,7 +6,14 @@ package regex
   * data structure definitions for regular languages
   */
 
-// Add your definitions here
+trait RegularLanguage
+
+case class Empty() extends RegularLanguage
+case class Epsilon() extends RegularLanguage
+case class Character() extends RegularLanguage
+case class Union() extends RegularLanguage
+case class Concat() extends RegularLanguage
+case class Star() extends RegularLanguage
 
 /** *****************************************************************************
   * Derivatives
