@@ -1,17 +1,17 @@
 package dfa // leave this line in the file
 
 case class State(label: String)
-case class Transition(from: State, symbol: Char, to: State)
+case class Transition(from: State, to: State, symbol: Char)
 
-class DFA(val states: Set[State], val startState: State, val acceptingStates: Set[State]):
+class DFA(val states: Set[State], val start: State, val accept: Set[State], val transitions: Set[Transition]):
     def accepts(input: String): Boolean = 
-        var currentState = startState
+        var currentState = start
         //for (var x <- input.length()) {
         //    var newState = something with transition and current state and input[x]
 
         //}
 
-        if acceptingStates.exists(currentState) then true
+        if accept.contains(currentState) then true
         else false
 
     
