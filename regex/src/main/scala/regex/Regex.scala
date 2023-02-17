@@ -10,10 +10,10 @@ trait RegularLanguage
 
 case class Empty() extends RegularLanguage
 case class Epsilon() extends RegularLanguage
-case class Character() extends RegularLanguage
-case class Union() extends RegularLanguage
-case class Concat() extends RegularLanguage
-case class Star() extends RegularLanguage
+case class Character(c: Char) extends RegularLanguage
+case class Union(re1: RegularLanguage, re2: RegularLanguage) extends RegularLanguage
+case class Concat(re1: RegularLanguage, re2: RegularLanguage) extends RegularLanguage
+case class Star(re: RegularLanguage) extends RegularLanguage
 
 /** *****************************************************************************
   * Derivatives
